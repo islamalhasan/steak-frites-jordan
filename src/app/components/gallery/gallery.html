@@ -1,0 +1,57 @@
+<section class="gallery-section section-padding" id="gallery">
+  <div class="container">
+
+    <div class="gallery-heading">
+      <span class="section-eyebrow">A VISUAL EXPERIENCE</span>
+
+      <h2>
+        Moments <span>Worth Sharing</span>
+      </h2>
+
+      <p>
+        A glimpse into our world of great food,
+        beautiful details and memorable moments.
+      </p>
+    </div>
+
+    <div class="gallery-grid">
+      @for (image of images; track image.src; let i = $index) {
+        <div class="gallery-item" [class.featured]="i === 0">
+
+          <img
+            [src]="image.src"
+            [alt]="image.alt"
+            loading="lazy"
+          />
+
+          <div class="gallery-overlay">
+            <div>
+              <span>STEAK FRITES CAFE</span>
+              <h3>{{ image.title }}</h3>
+            </div>
+
+            <i class="bi bi-arrow-up-right"></i>
+          </div>
+
+        </div>
+      }
+    </div>
+
+    <div class="gallery-bottom">
+      <p>Great food. Beautiful moments.</p>
+
+      <a
+        href="https://www.instagram.com/steakfritescafe/"
+        target="_blank"
+        rel="noopener noreferrer">
+        FOLLOW OUR JOURNEY
+        <i class="bi bi-instagram"></i>
+      </a>
+    </div>
+
+    <p class="gallery-note">
+      Sample photography for design purposes only.
+    </p>
+
+  </div>
+</section>

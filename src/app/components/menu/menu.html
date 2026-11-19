@@ -1,0 +1,75 @@
+<section class="menu-section section-padding" id="menu">
+  <div class="container">
+
+    <div class="menu-heading">
+      <span class="section-eyebrow">A TASTE OF EXCELLENCE</span>
+
+      <h2>
+        Our <span>Menu</span>
+      </h2>
+
+      <p>
+        Discover our selection of delicious dishes,
+        prepared with passion and served with care.
+      </p>
+    </div>
+
+    <div class="menu-categories">
+      @for (category of categories; track category) {
+        <button
+          type="button"
+          [class.active]="activeCategory === category"
+          (click)="selectCategory(category)">
+          {{ category }}
+        </button>
+      }
+    </div>
+
+    <div class="menu-grid">
+      @for (item of filteredItems; track item.name) {
+        <article class="menu-card">
+
+          <div class="menu-card-image">
+            <img
+              [src]="item.image"
+              [alt]="item.name"
+              loading="lazy"
+            />
+
+            @if (item.tag) {
+              <span class="menu-tag">{{ item.tag }}</span>
+            }
+          </div>
+
+          <div class="menu-card-content">
+            <div class="menu-card-title">
+              <h3>{{ item.name }}</h3>
+              <span class="menu-price">{{ item.price }} JOD</span>
+            </div>
+
+            <p>{{ item.description }}</p>
+
+            <div class="menu-card-footer">
+              <span>{{ item.category }}</span>
+              <i class="bi bi-arrow-up-right"></i>
+            </div>
+          </div>
+
+        </article>
+      }
+    </div>
+
+    <div class="menu-bottom">
+      <p>Good food is always worth sharing.</p>
+      <a href="#contact">
+        GET IN TOUCH
+        <i class="bi bi-arrow-up-right"></i>
+      </a>
+    </div>
+
+    <p class="demo-notice">
+      Sample menu and prices for design purposes only.
+    </p>
+
+  </div>
+</section>

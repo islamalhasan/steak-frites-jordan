@@ -1,0 +1,40 @@
+
+<header class="site-header">
+  <div class="header-container">
+
+    <a href="#home" class="brand" (click)="closeMenu()">
+      <span class="brand-name">STEAK FRITES</span>
+      <span class="brand-subtitle">CAFE · JORDAN</span>
+    </a>
+
+    <nav class="desktop-nav">
+      <a href="#home">Home</a>
+      <a href="#about">Our Story</a>
+      <a href="#menu">Menu</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <a href="#menu" class="header-cta">Explore Menu</a>
+
+    <button
+      class="menu-toggle"
+      type="button"
+      (click)="toggleMenu()"
+      [attr.aria-expanded]="isMenuOpen"
+      aria-label="Toggle navigation menu">
+
+      <i [class]="isMenuOpen ? 'bi bi-x-lg' : 'bi bi-list'"></i>
+    </button>
+
+  </div>
+
+  <nav class="mobile-nav" [class.open]="isMenuOpen">
+    <a href="#home" (click)="closeMenu()">Home</a>
+    <a href="#about" (click)="closeMenu()">Our Story</a>
+    <a href="#menu" (click)="closeMenu()">Menu</a>
+    <a href="#gallery" (click)="closeMenu()">Gallery</a>
+    <a href="#contact" (click)="closeMenu()">Contact</a>
+    <a href="#menu" class="mobile-cta" (click)="closeMenu()">Explore Menu</a>
+  </nav>
+</header>

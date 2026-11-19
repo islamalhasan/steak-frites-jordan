@@ -1,0 +1,178 @@
+
+.hero {
+  min-height: 750px;
+  height: 100vh;
+  max-height: 950px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  background:
+    url('/images/hero/hero-steak.jpg')
+    center 55% / cover no-repeat;
+  background-color: var(--burgundy-dark);
+  color: white;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(39, 12, 21, 0.92) 0%,
+    rgba(39, 12, 21, 0.72) 45%,
+    rgba(39, 12, 21, 0.18) 100%
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding-top: 100px;
+}
+
+.hero-eyebrow {
+  display: inline-block;
+  color: var(--champagne);
+  font-size: 12px;
+  letter-spacing: 5px;
+  margin-bottom: 28px;
+}
+
+.hero h1 {
+  font-family: Georgia, serif;
+  font-size: clamp(55px, 7vw, 100px);
+  font-weight: 400;
+  line-height: 1.05;
+  margin-bottom: 25px;
+
+  span {
+    color: var(--champagne);
+    font-style: italic;
+  }
+}
+
+.hero-content p {
+  max-width: 470px;
+  color: rgba(255,255,255,0.82);
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 35px;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.primary-btn,
+.secondary-btn {
+  min-height: 52px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 0 24px;
+  font-size: 11px;
+  letter-spacing: 1px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.primary-btn {
+  background: var(--cream);
+  color: var(--burgundy);
+
+  &:hover {
+    background: var(--champagne);
+  }
+}
+
+.secondary-btn {
+  border: 1px solid rgba(255,255,255,0.5);
+  color: white;
+
+  &:hover {
+    background: white;
+    color: var(--burgundy);
+  }
+}
+
+.hero-bottom {
+  position: absolute;
+  z-index: 1;
+  bottom: 30px;
+  left: 5%;
+  right: 5%;
+  display: flex;
+  justify-content: space-between;
+  color: rgba(255,255,255,0.75);
+  font-size: 10px;
+  letter-spacing: 2px;
+
+  a {
+    color: white;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 680px;
+    height: 90svh;
+    background-position: 60% center;
+  }
+
+  .hero-overlay {
+    background: linear-gradient(
+      90deg,
+      rgba(39,12,21,0.88),
+      rgba(39,12,21,0.48)
+    );
+  }
+
+  .hero-content {
+    padding-top: 80px;
+  }
+
+  .hero h1 {
+    font-size: clamp(48px, 11vw, 70px);
+  }
+
+  .hero-content p {
+    font-size: 14px;
+    max-width: 380px;
+  }
+
+  .hero-bottom {
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    min-height: 650px;
+    height: 85svh;
+  }
+
+  .hero-eyebrow {
+    font-size: 9px;
+    letter-spacing: 3px;
+  }
+
+  .hero-actions {
+    align-items: stretch;
+    flex-direction: column;
+    max-width: 260px;
+  }
+
+  .hero-bottom span {
+    max-width: 120px;
+    line-height: 1.6;
+  }
+
+  .hero-bottom a {
+    text-align: right;
+  }
+}

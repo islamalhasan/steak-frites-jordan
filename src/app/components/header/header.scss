@@ -1,0 +1,137 @@
+
+.site-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  color: var(--white);
+}
+
+.header-container {
+  width: min(1300px, 92%);
+  height: 100px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  color: var(--white);
+  line-height: 1.2;
+}
+
+.brand-name {
+  font-family: Georgia, serif;
+  font-size: 25px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.brand-subtitle {
+  font-size: 10px;
+  letter-spacing: 5px;
+  text-align: center;
+  margin-top: 6px;
+}
+
+.desktop-nav {
+  display: flex;
+  gap: 35px;
+
+  a {
+    color: var(--white);
+    font-size: 13px;
+    transition: color 0.3s;
+
+    &:hover {
+      color: var(--champagne);
+    }
+  }
+}
+
+.header-cta,
+.mobile-cta {
+  background: var(--cream);
+  color: var(--burgundy);
+  padding: 13px 23px;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: 0.3s;
+
+  &:hover {
+    background: var(--champagne);
+  }
+}
+
+.menu-toggle,
+.mobile-nav {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .header-container {
+    height: 80px;
+  }
+
+  .desktop-nav,
+  .header-cta {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: grid;
+    place-items: center;
+    background: transparent;
+    border: 0;
+    color: white;
+    font-size: 29px;
+    cursor: pointer;
+    width: 44px;
+    height: 44px;
+  }
+
+  .mobile-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    background: var(--burgundy-dark);
+    padding: 0 6%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.35s ease;
+
+    a {
+      color: white;
+      padding: 15px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+    }
+
+    &.open {
+      max-height: 400px;
+      padding: 15px 6% 25px;
+    }
+
+    .mobile-cta {
+      color: var(--burgundy);
+      text-align: center;
+      margin-top: 15px;
+      border: none;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .brand-name {
+    font-size: 21px;
+  }
+
+  .brand-subtitle {
+    font-size: 9px;
+  }
+}
